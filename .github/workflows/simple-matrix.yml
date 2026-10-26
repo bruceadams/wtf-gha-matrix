@@ -1,0 +1,17 @@
+name: Simple matrix build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  expect-concurrent:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        label:
+          - one
+          - two
+          - three
+    steps:
+      - name: Do the thing ${{ matrix.label }}
+        run: echo ${{ matrix.label }}
