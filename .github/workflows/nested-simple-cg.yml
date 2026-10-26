@@ -1,0 +1,19 @@
+name: Nested workflow with concurrency-group
+
+concurrency:
+  group: ${{ inputs.sdlc_environment }}-${{ github.workflow }}
+  cancel-in-progress: false
+
+on:
+  workflow_call:
+    inputs:
+      label:
+        type: string
+
+jobs:
+  nested-simple:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Do the thing ${{ inputs.label }}
+        run: echo ${{ inputs.label }}

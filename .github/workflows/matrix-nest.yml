@@ -1,0 +1,15 @@
+name: Matrix with nested workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  expect-concurrent:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        label:
+          - one
+          - two
+          - three
+    uses: .github/workflows/nested-simple-cg.yml
