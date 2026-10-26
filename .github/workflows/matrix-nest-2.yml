@@ -1,0 +1,16 @@
+name: Matrix with nested workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  expect-concurrent:
+    strategy:
+      matrix:
+        label:
+          - one
+          - two
+          - three
+    uses: ./.github/workflows/nested-simple-noc.yml
+    with:
+      label: ${{ matrix.label }}
