@@ -13,4 +13,5 @@ jobs:
           - two
           - three
     uses: ./.github/workflows/nested-simple-cg.yml
-    with: label: ${{ matrix.label }}
+    with:
+      label: ${{ matrix.label }}
