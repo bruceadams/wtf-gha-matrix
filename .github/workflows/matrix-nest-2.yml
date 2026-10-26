@@ -1,4 +1,4 @@
-name: Matrix with nested workflow
+name: Matrix with nested workflow Two
 
 on:
   workflow_dispatch:

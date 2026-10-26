@@ -1,8 +1,4 @@
-name: Nested workflow with concurrency-group
-
-concurrency:
-  group: ${{ inputs.sdlc_environment }}-${{ github.workflow }}
-  cancel-in-progress: false
+name: Nested workflow, no concurrency
 
 on:
   workflow_call:
